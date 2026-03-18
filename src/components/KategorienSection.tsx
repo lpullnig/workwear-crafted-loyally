@@ -1,12 +1,17 @@
-import { Shirt, ShieldCheck } from "lucide-react";
+import catJacken from "@/assets/cat-jacken.jpg";
+import catTshirts from "@/assets/cat-tshirts.jpg";
+import catPolo from "@/assets/cat-polo.jpg";
+import catHoodies from "@/assets/cat-hoodies.jpg";
+import catWarnwesten from "@/assets/cat-warnwesten.jpg";
+import catCaps from "@/assets/cat-caps.jpg";
 
 const categories = [
-  { label: "Arbeitsjacken", emoji: "🧥" },
-  { label: "T-Shirts", emoji: "👕" },
-  { label: "Poloshirts", emoji: "👔" },
-  { label: "Hoodies", emoji: "🧶" },
-  { label: "Warnwesten", emoji: "🦺" },
-  { label: "Caps", emoji: "🧢" },
+  { label: "Arbeitsjacken", image: catJacken, href: "https://kp-workwear.com/collections/arbeitsjacken" },
+  { label: "T-Shirts", image: catTshirts, href: "https://kp-workwear.com/collections/t-shirts" },
+  { label: "Poloshirts", image: catPolo, href: "https://kp-workwear.com/collections/poloshirts" },
+  { label: "Hoodies", image: catHoodies, href: "https://kp-workwear.com/collections/hoodies" },
+  { label: "Warnwesten", image: catWarnwesten, href: "https://kp-workwear.com/collections/warnwesten" },
+  { label: "Caps", image: catCaps, href: "https://kp-workwear.com/collections/caps" },
 ];
 
 const KategorienSection = () => {
@@ -21,13 +26,23 @@ const KategorienSection = () => {
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {categories.map((cat, i) => (
-            <div
+            <a
               key={i}
-              className="group p-6 rounded-2xl bg-kpw-card border border-border hover:border-primary/40 transition-all cursor-pointer text-center hover:glow-green"
+              href={cat.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative rounded-2xl overflow-hidden aspect-square bg-kpw-card border border-border hover:border-primary/40 transition-all hover:glow-green"
             >
-              <span className="text-4xl mb-3 block">{cat.emoji}</span>
-              <span className="font-display font-semibold text-sm">{cat.label}</span>
-            </div>
+              <img
+                src={cat.image}
+                alt={cat.label}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent flex items-end justify-center p-4">
+                <span className="font-display font-semibold text-sm text-foreground">{cat.label}</span>
+              </div>
+            </a>
           ))}
         </div>
       </div>
