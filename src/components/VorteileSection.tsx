@@ -12,23 +12,26 @@ const VorteileSection = () => {
   return (
     <section className="section-padding bg-kpw-card">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-center mb-4">
-          Ihre Vorteile mit <span className="text-gradient">KPW Workwear</span>
+        <p className="text-primary font-bold tracking-[0.25em] uppercase text-xs text-center mb-3">
+          Ihre Vorteile
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold font-display text-center mb-4 uppercase tracking-tight">
+          Warum <span className="text-gradient">KPW Workwear</span>
         </h2>
-        <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-muted-foreground text-center mb-14 max-w-2xl mx-auto text-sm">
           Warum Unternehmen und Vereine auf unsere Stickerei und Textildruckerei vertrauen
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border">
           {advantages.map((item, i) => (
             <div
               key={i}
-              className="flex flex-col items-center text-center p-6 rounded-xl bg-secondary/50 border border-border hover:border-primary/30 transition-colors"
+              className="flex flex-col items-center text-center p-8 bg-kpw-card hover:bg-kpw-elevated transition-colors"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <item.icon className="w-7 h-7 text-primary" />
+              <div className="w-12 h-12 rounded-none bg-primary/10 flex items-center justify-center mb-5">
+                <item.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-semibold font-display text-sm mb-2">{item.title}</h3>
-              <p className="text-muted-foreground text-xs">{item.desc}</p>
+              <h3 className="font-bold font-display text-sm mb-2 uppercase tracking-wide">{item.title}</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

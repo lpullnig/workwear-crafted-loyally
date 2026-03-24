@@ -18,23 +18,26 @@ const GalerieSection = () => {
   return (
     <section className="section-padding bg-kpw-card">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-center mb-4">
-          Beispiele unserer <span className="text-gradient">Stickerei & Textildruckerei</span>
+        <p className="text-primary font-bold tracking-[0.25em] uppercase text-xs text-center mb-3">
+          Referenzprojekte
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold font-display text-center mb-4 uppercase tracking-tight">
+          Beispiele unserer <span className="text-gradient">Veredelung</span>
         </h2>
-        <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-muted-foreground text-center mb-14 max-w-2xl mx-auto text-sm">
           Von der Arbeitsjacke bis zur Vereinskleidung – professionelle Veredelung für jeden Einsatz
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
           {items.map((item, i) => (
-            <div key={i} className="group relative rounded-xl overflow-hidden aspect-square">
+            <div key={i} className="group relative overflow-hidden aspect-[4/3]">
               <img
                 src={item.src}
                 alt={item.alt}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <span className="font-display font-semibold text-sm">{item.label}</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex items-end p-5">
+                <span className="font-display font-bold text-xs uppercase tracking-wider">{item.label}</span>
               </div>
             </div>
           ))}
